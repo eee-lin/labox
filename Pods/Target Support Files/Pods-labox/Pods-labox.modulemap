@@ -1,0 +1,6 @@
+framework module Pods_labox {
+  umbrella header "Pods-labox-umbrella.h"
+
+  export *
+  module * { export * }
+}
