@@ -17,6 +17,7 @@ class MyImageDetailViewController: UIViewController, UICollectionViewDelegate,UI
     //var selectedUser: NCMBUser?
     var count: Int = 0
     var items = [String]()
+    var selectedImage: String!
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var recorddateLabel: UILabel!
@@ -108,6 +109,15 @@ class MyImageDetailViewController: UIViewController, UICollectionViewDelegate,UI
             return items.count
         }
     
+       // Cell が選択された場合
+       func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        // [indexPath.row] から画像名を探し、UImage を設定
+        selectedImage = items[indexPath.row]
+        
+        // SubViewController へ遷移するために Segue を呼び出す
+        performSegue(withIdentifier: "toSubImage",sender: nil)
+       }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -122,6 +132,10 @@ class MyImageDetailViewController: UIViewController, UICollectionViewDelegate,UI
             let commentsViewController = segue.destination as! CommentsViewController
             //prepare for segueが呼ばれた時の今選択されているセルを代入する
             commentsViewController.postId = selectedPost?.objectId
+        }
+        if segue.identifier == "toSubImage" {
+            let subimageViewController = segue.destination as! SubImageViewController
+            subimageViewController.selectedImg = selectedImage
         }
     }
     
@@ -196,6 +210,10 @@ class MyImageDetailViewController: UIViewController, UICollectionViewDelegate,UI
                 })
             }
         })
+    }
+    
+    @IBAction func gotoComments() {
+        performSegue(withIdentifier: "toComments", sender: nil)
     }
     
 }

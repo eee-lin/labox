@@ -63,7 +63,7 @@ class UserImageDetailViewController: UIViewController, UICollectionViewDelegate,
         textTextView.layer.cornerRadius = textTextView.bounds.width / 30.0
         textTextView.layer.masksToBounds = true
 
-        nameLabel.text = selectedPost?.user.userName
+        nameLabel.text = selectedPost?.user.displayName
         recorddateLabel.text = selectedPost?.recorddate
         titleLabel.text = selectedPost?.title
         textTextView.text = selectedPost?.text

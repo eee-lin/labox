@@ -50,11 +50,9 @@ PODS:
     - SDWebImage
     - SDWebImageFLPlugin
   - FLAnimatedImage (1.0.12)
-  - FSCalendar (2.8.1)
   - Kingfisher (5.13.0):
     - Kingfisher/Core (= 5.13.0)
   - Kingfisher/Core (5.13.0)
-  - lottie-ios (3.1.6)
   - NCMB (3.1.0)
   - NYXImagesKit (2.3)
   - PKHUD (5.3.0)
@@ -65,29 +63,17 @@ PODS:
   - SDWebImageFLPlugin (0.4.0):
     - FLAnimatedImage (>= 1.0.11)
     - SDWebImage/Core (~> 5.6)
-  - SnapKit (5.0.1)
-  - SVProgressHUD (2.2.6):
-    - SVProgressHUD/Core (= 2.2.6)
-  - SVProgressHUD/Core (2.2.6)
   - SwiftDate (5.1.0)
-  - TwitterCore (3.2.0)
-  - TwitterKit (3.4.2):
-    - TwitterCore (>= 3.2.0)
   - "UITextView+Placeholder (1.4.0)"
 
 DEPENDENCIES:
   - DKImagePickerController
-  - FSCalendar
   - Kingfisher (~> 5.0)
-  - lottie-ios
   - NCMB (from `https://github.com/NIFCLOUD-mbaas/ncmb_ios.git`)
   - NYXImagesKit
   - PKHUD (~> 5.0)
   - RAMAnimatedTabBarController
-  - SnapKit (~> 5.0.0)
-  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - SwiftDate (~> 5.0)
-  - TwitterKit
   - "UITextView+Placeholder"
 
 SPEC REPOS:
@@ -97,33 +83,23 @@ SPEC REPOS:
     - DKImagePickerController
     - DKPhotoGallery
     - FLAnimatedImage
-    - FSCalendar
     - Kingfisher
-    - lottie-ios
     - NYXImagesKit
     - PKHUD
     - RAMAnimatedTabBarController
     - SDWebImage
     - SDWebImageFLPlugin
-    - SnapKit
     - SwiftDate
-    - TwitterCore
-    - TwitterKit
     - "UITextView+Placeholder"
 
 EXTERNAL SOURCES:
   NCMB:
     :git: https://github.com/NIFCLOUD-mbaas/ncmb_ios.git
-  SVProgressHUD:
-    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 CHECKOUT OPTIONS:
   NCMB:
     :commit: 06072ba57e6ef461cafd20feaa798be0eef0cf8b
     :git: https://github.com/NIFCLOUD-mbaas/ncmb_ios.git
-  SVProgressHUD:
-    :commit: 0a9abb56a8d5c1ffc0078babc07fb11ff2fa2f22
-    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
   CropViewController: 1aac40093c5739e60d992b04724a55d12a689a4c
@@ -131,22 +107,16 @@ SPEC CHECKSUMS:
   DKImagePickerController: 4a3e7948a848c4348e600b3fe5ce41478835fa10
   DKPhotoGallery: 0290d32343574f06eaa4c26f8f2f8a1035e916be
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
-  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
   Kingfisher: 0d334cada987fcddbe9b5cec516406e1ee9d4748
-  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   NCMB: c308972109137bf523ec1830bac16de6a31c25f4
   NYXImagesKit: 8163e3335a40eaa173ca5bbbf81fafb57d3947eb
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   RAMAnimatedTabBarController: b5c821298071fded801532216ad8a24394f89859
   SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
   SDWebImageFLPlugin: 6c2295fb1242d44467c6c87dc5db6b0a13228fd8
-  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SVProgressHUD: de812b4f0e1d65358f0064416473174ae619843f
   SwiftDate: 6329e58969a2de31cea7f1ee1143b247693196e7
-  TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
-  TwitterKit: 5e4f41d70b9abdb41df5467f52d7aa2c0fd26ebb
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 8e630d660216bc12e6e80b910fcc8f26eff4f22b
+PODFILE CHECKSUM: ee109148f9d0682c8df9a01609cf4ba2e6010ae3
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

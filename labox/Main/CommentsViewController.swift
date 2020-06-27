@@ -63,7 +63,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
             }
         }
-        cell.nameLabel.text = user.userName
+        cell.nameLabel.text = user.displayName
         cell.commentTextView.text = comments[indexPath.row].text
         let date = stringFromDate(date: comments[indexPath.row].createDate, format: "yyyy年MM月dd日 HH時mm分ss秒 ")
         cell.dateLabel.text = date
@@ -90,8 +90,8 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
                     // コメントをしたユーザーの情報を取得
                     //objectforkeyで引っ張り出した情報をusermodelに格納
                     let user = commentObject.object(forKey: "user") as! NCMBUser
-                    let userModel = User(objectId: user.objectId, userName: user.userName)
-                    userModel.displayName = user.object(forKey: "displayName") as? String
+                    let userModel = User(objectId: user.objectId, userName: user.userName, displayName: user.object(forKey: "displayName") as! String)
+                    //userModel.displayName = user.object(forKey: "displayName") as? String
 
                     // コメントの文字を取得
                     let text = commentObject.object(forKey: "text") as! String

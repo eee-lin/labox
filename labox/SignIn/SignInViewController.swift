@@ -34,26 +34,24 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func signIn() {
-        
+//        let user = NCMBUser()
+        // 任意フィールドに値を設定
         if (emailTextField.text?.count)! > 0 && (passwordTextField.text?.count)! > 0 {
-            NCMBUser.logInWithUsername(inBackground: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+            NCMBUser.logInWithUsername(inBackground: emailTextField.text, password: passwordTextField.text) { (user, error) in
                 if error != nil {
                     HUD.flash(.labeledError(title: "アカウントがありません", subtitle: "ご記入にお間違いがないかご確認ください"), delay: 3)
                 } else {
-                    if user?.object(forKey: "active") as? Bool == false {
+                    if user!.object(forKey: "active") as? Bool == false {
                         HUD.flash(.labeledError(title: "そのユーザーは退会済みです", subtitle: "アカウントを作成してください"), delay: 3)
                     } else {
-                        // ログイン成功
-                        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                        let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController")
-                        UIApplication.shared.keyWindow?.rootViewController = rootViewController
-                        
-                        // ログイン状態の保持
-                        //このアプリの一番下(奥)にある画面を取得することができる
-                        let ud = UserDefaults.standard
-                        ud.set(true, forKey: "isLogin")
-                        ud.synchronize()
-                        //この３行がログイン状態の保持
+                            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                            let rootViewController = storyboard.instantiateViewController(withIdentifier: "RootTabBarController")
+                            UIApplication.shared.keyWindow?.rootViewController = rootViewController
+                            // ログイン状態の保持
+                            //このアプリの一番下(奥)にある画面を取得することができる
+                            let ud = UserDefaults.standard
+                            ud.set(true, forKey: "isLogin")
+                            //この３行がログイン状態の保持
                     }
                 }
             }
@@ -69,9 +67,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             checkPW = false
         }
     }
-    
+//
     @IBAction func forgetPassword() {
-        // 置いておく
+        performSegue(withIdentifier: "toForgetPW", sender: nil)
     }
+    
 
 }

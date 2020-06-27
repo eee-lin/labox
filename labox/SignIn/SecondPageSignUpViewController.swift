@@ -37,9 +37,9 @@ class SecondpageSignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let signupviewcontroller = segue.destination as! SignUpViewController
-        signupviewcontroller.passedName = passedName
-        signupviewcontroller.passedEmail = passedEmail
-        signupviewcontroller.passedPassword = passwordTextField.text
+//        signupviewcontroller.passedName = passedName
+//        signupviewcontroller.passedEmail = passedEmail
+//        signupviewcontroller.passedPassword = passwordTextField.text
     }
     
     @IBAction func next() {

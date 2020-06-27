@@ -50,7 +50,7 @@ class UserDetailViewController: UIViewController {
         textTextView.layer.cornerRadius = textTextView.bounds.width / 30.0
         textTextView.layer.masksToBounds = true
 
-        nameLabel.text = selectedPost?.user.userName
+        nameLabel.text = selectedPost?.user.displayName
         textTextView.text = selectedPost?.text
         let date = stringFromDate(date: selectedPost!.createDate, format: "yyyy年MM月dd日 HH時mm分ss秒 ")
         dateLabel.text = date

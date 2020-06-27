@@ -69,10 +69,10 @@ class ShowUserViewController: UIViewController, UITableViewDataSource, UITableVi
             
             // TODO: CurrentUserがいないときにはサインイン画面に移動させる（他のVCのコードみてbyせのお）
             // ユーザー基礎情報の読み込み
-            userNameLabel.text = selectedUser.object(forKey: "userName") as? String
+            userNameLabel.text = selectedUser.object(forKey: "displayName") as? String
             userIntroductionTextView.text = selectedUser.object(forKey: "introduction") as? String
             labnameLabel.text = selectedUser.object(forKey: "labname") as? String
-            self.navigationItem.title = selectedUser.userName
+            self.navigationItem.title = selectedUser.object(forKey: "displayName") as? String
             
             // プロフィール画像の読み込み
             let userfile = NCMBFile.file(withName: selectedUser.objectId + "user", data: nil) as! NCMBFile
@@ -279,8 +279,8 @@ class ShowUserViewController: UIViewController, UITableViewDataSource, UITableVi
                     for postObject in result as! [NCMBObject] {
                         // ユーザー情報をUserクラスにセット
                         let user = postObject.object(forKey: "user") as! NCMBUser
-                        let userModel = User(objectId: user.objectId, userName: user.userName)
-                        userModel.displayName = user.object(forKey: "displayName") as? String
+                        let userModel = User(objectId: user.objectId, userName: user.userName, displayName: user.object(forKey: "displayName") as! String)
+                        //userModel.displayName = user.object(forKey: "displayName") as? String
                         
                         // 投稿の情報を取得
                         let imageUrl1 = postObject.object(forKey: "imageUrl1") as! String
@@ -356,7 +356,7 @@ class ShowUserViewController: UIViewController, UITableViewDataSource, UITableVi
             // すでにフォロー状態だった場合、フォロー解除
             if let info = followingInfo {
 
-                let userName = selectedUser.object(forKey: "userName") as? String
+                let userName = selectedUser.object(forKey: "displayName") as? String
 
                 let message = userName! + "のフォローを解除しますか？"
                 let alert = UIAlertController(title: "フォロー解除", message: message, preferredStyle: .alert)
@@ -389,7 +389,7 @@ class ShowUserViewController: UIViewController, UITableViewDataSource, UITableVi
                 alert.addAction(cancelAction)
                 self.present(alert, animated: true, completion: nil)
             } else { //フォローしてない時
-                let userName = selectedUser.object(forKey: "userName") as? String
+                let userName = selectedUser.object(forKey: "displayName") as? String
 
                 let message = userName! + "をフォローしますか？"
                 let alert = UIAlertController(title: "フォロー", message: message, preferredStyle: .alert)

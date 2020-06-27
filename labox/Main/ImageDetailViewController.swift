@@ -17,6 +17,7 @@ class ImageDetailViewController: UIViewController, UICollectionViewDelegate,UICo
     var selectedUser: NCMBUser?
     var count: Int = 0
     var items = [String]()
+    var selectedImage: String!
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var recorddateLabel: UILabel!
@@ -65,7 +66,7 @@ class ImageDetailViewController: UIViewController, UICollectionViewDelegate,UICo
         textTextView.layer.cornerRadius = textTextView.bounds.width / 30.0
         textTextView.layer.masksToBounds = true
         
-        nameLabel.text = selectedPost?.user.userName
+        nameLabel.text = selectedPost?.user.displayName
         recorddateLabel.text = selectedPost?.recorddate
         titleLabel.text = selectedPost?.title
         textTextView.text = selectedPost?.text
@@ -140,6 +141,10 @@ class ImageDetailViewController: UIViewController, UICollectionViewDelegate,UICo
             //prepare for segueが呼ばれた時の今選択されているセルを代入する
             commentsViewController.postId = selectedPost?.objectId
         }
+        if segue.identifier == "toSubImage" {
+            let subimageViewController = segue.destination as! SubImageViewController
+            subimageViewController.selectedImg = selectedImage
+        }
     }
     
     func stringFromDate(date: Date, format: String) -> String {
@@ -148,17 +153,6 @@ class ImageDetailViewController: UIViewController, UICollectionViewDelegate,UICo
         formatter.dateFormat = format
         return formatter.string(from: date)
     }
-    
-//    @IBAction func movetoUser() {
-//        performSegue(withIdentifier: "toUser", sender: nil)
-//    }
-
-//    @IBAction func tapImage() {
-//        let userpageViewController = self.storyboard?.instantiateViewController(withIdentifier: "UserPageViewController") as! UINavigationController
-//
-//        present(userpageViewController, animated: true, completion: nil)
-//
-//    }
     
 }
 

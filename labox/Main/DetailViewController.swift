@@ -52,7 +52,7 @@ class DetailViewController: UIViewController {
         textTextView.layer.cornerRadius = textTextView.bounds.width / 30.0
         textTextView.layer.masksToBounds = true
         
-        nameLabel.text = selectedPost?.user.userName
+        nameLabel.text = selectedPost?.user.displayName
         textTextView.text = selectedPost?.text
         recorddateLabel.text = selectedPost?.recorddate
         titleLabel.text = selectedPost?.title

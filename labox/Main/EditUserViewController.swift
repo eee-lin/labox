@@ -42,6 +42,16 @@ class EditUserViewController: UIViewController,UITextFieldDelegate, UITextViewDe
         
         userImageView.layer.cornerRadius = userImageView.bounds.width / 2.0
         userImageView.clipsToBounds = true
+        
+        // 枠のカラー
+        introduceTextView.layer.borderColor = UIColor(red: 53/255, green: 72/255, blue: 79/255, alpha: 1.0).cgColor
+
+        // 枠の幅
+        introduceTextView.layer.borderWidth = 1.0
+        
+        // 枠を角丸にする
+        introduceTextView.layer.cornerRadius = introduceTextView.bounds.width / 30.0
+        introduceTextView.layer.masksToBounds = true
 
         nameTextField.delegate = self
         introduceTextView.delegate = self
@@ -65,19 +75,19 @@ class EditUserViewController: UIViewController,UITextFieldDelegate, UITextViewDe
     
     func loadDate() {
         if let user = NCMBUser.current() {
-            nameTextField.text = NCMBUser.current().object(forKey: "userName") as? String
+            nameTextField.text = NCMBUser.current().object(forKey: "displayName") as? String
             introduceTextView.text = NCMBUser.current().object(forKey: "introduction") as? String
             placeTextField.text = NCMBUser.current()?.object(forKey: "place") as? String
             labnameTextField.text = NCMBUser.current()?.object(forKey: "labname") as? String
             majorTextField.text = NCMBUser.current()?.object(forKey: "major") as? String
 
-            self.navigationItem.title = user.userName
+            self.navigationItem.title = user.object(forKey: "displayName") as? String
             //let userId = NCMBUser.current().userName
             //画像を取得
             let userfile = NCMBFile.file(withName: user.objectId + "user", data: nil) as! NCMBFile
             userfile.getDataInBackground { (data, error) in
                 if error != nil {
-                    HUD.flash(.labeledError(title: "画像取得エラー", subtitle: ""), delay: 2.0)
+                    //HUD.flash(.labeledError(title: "画像取得エラー", subtitle: error?.localizedDescription), delay: 2.0)
                 } else {
                     if data != nil {
                         //dataの中身があれば画像を表示
@@ -88,12 +98,7 @@ class EditUserViewController: UIViewController,UITextFieldDelegate, UITextViewDe
                 let backfile = NCMBFile.file(withName: user.objectId + "back", data: nil) as! NCMBFile
                 backfile.getDataInBackground { (data, error) in
                     if error != nil {
-                        let alert = UIAlertController(title: "画像取得エラー", message: error!.localizedDescription, preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                            
-                        })
-                        alert.addAction(okAction)
-                        self.present(alert, animated: true, completion: nil)
+                        //HUD.flash(.labeledError(title: "プロフィールをアレンジしよう", subtitle: "画像をタップしてね"), delay: 1.5)
                     } else {
                         if data != nil {
                             //dataの中身があれば画像を表示
@@ -157,16 +162,10 @@ class EditUserViewController: UIViewController,UITextFieldDelegate, UITextViewDe
 //            backImageView.image = resizedbackImage
             picker.dismiss(animated: true, completion: nil)
             
-            let backdata = resizeduserImage!.pngData()
+            let backdata = resizedbackImage!.pngData()
             let file = NCMBFile.file(withName: NCMBUser.current()!.objectId + "back", data: backdata) as! NCMBFile
             file.saveInBackground({ (error) in
                 if error != nil {
-//                    let alert = UIAlertController(title: "画像アップロードエラー", message: error!.localizedDescription, preferredStyle: .alert)
-//                    let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-//
-//                    })
-//                    alert.addAction(okAction)
-//                    self.present(alert, animated: true, completion: nil)
                 } else {
                     self.backImageView.image = self.resizedbackImage
                     self.backimagecount = false
@@ -238,17 +237,13 @@ class EditUserViewController: UIViewController,UITextFieldDelegate, UITextViewDe
     }
     
     @IBAction func saveUserInfo() {
+        HUD.show(.progress, onView: view)
         if resizedbackImage != nil {
             backimagedata = resizedbackImage!.pngData()
             let backfile = NCMBFile.file(withName: NCMBUser.current()!.objectId + "back", data: backimagedata) as! NCMBFile
             backfile.saveInBackground({ (error) in
                 if error != nil {
-                    let alert = UIAlertController(title: "画像アップロードエラー", message: error!.localizedDescription, preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        
-                    })
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true, completion: nil)
+                    HUD.flash(.labeledError(title: "画像アップロードエラー", subtitle: ""), delay: 1.0)
                 } else {
                     self.backurl = "https://mbaas.api.nifcloud.com/2013-09-01/applications/U6JMTv054XyGhBEa/publicFiles/" + backfile.name
                 }
@@ -263,12 +258,7 @@ class EditUserViewController: UIViewController,UITextFieldDelegate, UITextViewDe
             let userfile = NCMBFile.file(withName: NCMBUser.current()!.objectId + "user", data: userimagedata) as! NCMBFile
             userfile.saveInBackground({ (error) in
                 if error != nil {
-                    let alert = UIAlertController(title: "画像アップロードエラー", message: error!.localizedDescription, preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                        
-                    })
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true, completion: nil)
+                    HUD.flash(.labeledError(title: "画像アップロードエラー", subtitle: error?.localizedDescription), delay: 1.0)
                 } else {
                     self.userurl = "https://mbaas.api.nifcloud.com/2013-09-01/applications/U6JMTv054XyGhBEa/publicFiles/" + userfile.name
                 }
@@ -280,7 +270,7 @@ class EditUserViewController: UIViewController,UITextFieldDelegate, UITextViewDe
         
         
         let user = NCMBUser.current()
-        user?.setObject(nameTextField.text, forKey: "userName")
+        user?.setObject(nameTextField.text, forKey: "displayName")
         user?.setObject(introduceTextView.text, forKey: "introduction")
         user?.setObject(placeTextField.text, forKey: "place")
         user?.setObject(labnameTextField.text, forKey: "labname")
@@ -291,17 +281,18 @@ class EditUserViewController: UIViewController,UITextFieldDelegate, UITextViewDe
 
         user?.saveInBackground({ (error) in
             if error != nil {
-                let alert = UIAlertController(title: "送信エラー", message: error!.localizedDescription, preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                    alert.dismiss(animated: true, completion: nil)
-                })
-                alert.addAction(okAction)
-                self.present(alert, animated: true, completion: nil)
+                HUD.flash(.labeledError(title: "送信エラー", subtitle: error?.localizedDescription), delay: 2.0)
             } else {
                 self.dismiss(animated: true, completion: nil)
                 self.navigationController?.popToRootViewController(animated: true)
             }
         })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+            HUD.hide()
+//            HUD.flash(.labeledSuccess(title: "投稿完了", subtitle: "送信しました"), delay: 2)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func back() {

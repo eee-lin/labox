@@ -11,27 +11,6 @@ import NCMB
 import PKHUD
 import Kingfisher
 import SwiftDate
-import FSCalendar
-
-//extension ViewController: FSCalendarDataSource, FSCalendarDelegate {
-//    // MARK: - FSCalendar Delegate
-//    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-//
-//        let tmpDate = Calendar(identifier: .gregorian)
-//        let year = tmpDate.component(.year, from: date)
-//        let month = tmpDate.component(.month, from: date)
-//        let day = tmpDate.component(.day, from: date)
-//        dateLabel.text = "\(year)/\(month)/\(day)"
-//
-//        print("didSelect")
-//        //日付選択時に呼ばれるメソッド
-////        diaryArray = Diary.search(date: date)
-////
-////        diaryTitleTableView.reloadData()
-//
-//    }
-//
-//}
 
 class ImageLoader {
     func loadImage(url: URL, completion: @escaping (_ succeeded: Bool, _ image: UIImage?) -> Void) {
@@ -96,13 +75,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         // フォロー中のユーザーを取得する。その後にフォロー中のユーザーの投稿のみ読み込み
         loadFollowingUsers()
+        
+//        print(posts[0])
+//        print(posts.count)
+//        print("いりん")
+//        if posts[0] {
+//            HUD.flash(.labeledImage(image: UIImage(named: "icons8-メモ-64.png"), title: "投稿がありません", subtitle: "+を押してください"), delay: 2)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         loadTimeline()
-        if posts.count == 0 {
-            HUD.flash(.labeledImage(image: UIImage(named: "icons8-メモ-64.png"), title: "投稿がありません", subtitle: "+を押してください"), delay: 2)
-        }
+//        if posts.count == 0 {
+//            HUD.flash(.labeledImage(image: UIImage(named: "icons8-メモ-64.png"), title: "投稿がありません", subtitle: "+を押してください"), delay: 2)
+//        }
         //loadComments()
     }
 
@@ -155,7 +141,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         cell.userImageView.layer.cornerRadius = cell.userImageView.bounds.width / 2.0
                         cell.userImageView.clipsToBounds = true
                         cell.titleLabel.text = posts[indexPath.row].title
-                        cell.nameLabel.text = posts[indexPath.row].user.userName
+                        cell.nameLabel.text = posts[indexPath.row].user.displayName
                         let date = stringFromDate(date: posts[indexPath.row].createDate, format: "yyyy年MM月dd日 HH時mm分ss秒 ")
                         cell.dateLabel.text = date
                         
@@ -207,7 +193,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         cell.userImageView.clipsToBounds = true
                         cell.titleLabel.text = posts[indexPath.row].title
                         print(posts[indexPath.row].text)
-                        cell.nameLabel.text = posts[indexPath.row].user.userName
+                        cell.nameLabel.text = posts[indexPath.row].user.displayName
                         let date = stringFromDate(date: posts[indexPath.row].createDate, format: "yyyy年MM月dd日 HH時mm分ss秒 ")
                         cell.dateLabel.text = date
                         
@@ -266,7 +252,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         cell.userImageView.layer.cornerRadius = cell.userImageView.bounds.width / 2.0
                         cell.userImageView.clipsToBounds = true
                         cell.titleLabel.text = posts[indexPath.row].title
-                        cell.nameLabel.text = posts[indexPath.row].user.userName
+                        cell.nameLabel.text = posts[indexPath.row].user.displayName
                         let date = stringFromDate(date: posts[indexPath.row].createDate, format: "yyyy年MM月dd日 HH時mm分ss秒 ")
                         cell.dateLabel.text = date
                         
@@ -327,7 +313,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         cell.userImageView.layer.cornerRadius = cell.userImageView.bounds.width / 2.0
                         cell.userImageView.clipsToBounds = true
                         cell.titleLabel.text = posts[indexPath.row].title
-                        cell.nameLabel.text = posts[indexPath.row].user.userName
+                        cell.nameLabel.text = posts[indexPath.row].user.displayName
                         let date = stringFromDate(date: posts[indexPath.row].createDate, format: "yyyy年MM月dd日 HH時mm分ss秒 ")
                         cell.dateLabel.text = date
                         
@@ -493,7 +479,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                             if user.object(forKey: "active") as? Bool != false {
                                 self.users.append(user)
                                 // 投稿したユーザーの情報をUserモデルにまとめる
-                                let userModel = User(objectId: user.objectId, userName: user.userName)
+                                let userModel = User(objectId: user.objectId, userName: user.userName, displayName: user.object(forKey: "displayName") as! String)
                                 userModel.labname = user.object(forKey: "labname") as? String
                                 userModel.major = user.object(forKey: "major") as? String
                                 userModel.introduction = user.object(forKey: "introduction") as? String

@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9880E642E255F7A3D79FBBC7 /* Pods_labox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE38682E88C04E32BE0F0F /* Pods_labox.framework */; };
-		D5093C2F245AF48500C97034 /* メモアイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = D5093C2E245AF48400C97034 /* メモアイコン.png */; };
-		D5093C32245AF74500C97034 /* icons8-メモ-64.png in Resources */ = {isa = PBXBuildFile; fileRef = D5093C30245AF74400C97034 /* icons8-メモ-64.png */; };
-		D5093C33245AF74500C97034 /* icons8-メモ-26.png in Resources */ = {isa = PBXBuildFile; fileRef = D5093C31245AF74400C97034 /* icons8-メモ-26.png */; };
 		D5150F0F244E047800FFC5E0 /* UserPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5150F0E244E047800FFC5E0 /* UserPageViewController.swift */; };
 		D5150F13244E059E00FFC5E0 /* MypostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5150F11244E059E00FFC5E0 /* MypostTableViewCell.swift */; };
 		D5150F14244E059E00FFC5E0 /* MypostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5150F12244E059E00FFC5E0 /* MypostTableViewCell.xib */; };
@@ -72,16 +69,18 @@
 		D529D1EA2448860D00531945 /* iTunesArtwork@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D529D1D62448860C00531945 /* iTunesArtwork@3x.png */; };
 		D52D88ED2457DFD10008A400 /* ForgetPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D88EC2457DFD10008A400 /* ForgetPWViewController.swift */; };
 		D53237B724516B9900617F33 /* EditMyPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53237B624516B9900617F33 /* EditMyPostViewController.swift */; };
-		D54E85CF244F15B100310EC8 /* twitter背景画像(暗い).jpg in Resources */ = {isa = PBXBuildFile; fileRef = D54E85CE244F15B100310EC8 /* twitter背景画像(暗い).jpg */; };
+		D53B8B43248F805E001D2886 /* icons8-back-arrow-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D53B8B42248F805D001D2886 /* icons8-back-arrow-50.png */; };
+		D53E38C92492703A0093BD3B /* DoneSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E38C82492703A0093BD3B /* DoneSignUpViewController.swift */; };
+		D53E38CB249270520093BD3B /* FirstSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53E38CA249270520093BD3B /* FirstSignInViewController.swift */; };
 		D54E85D2244F3EC500310EC8 /* userPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54E85D0244F3EC500310EC8 /* userPostTableViewCell.swift */; };
 		D54E85D3244F3EC500310EC8 /* userPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54E85D1244F3EC500310EC8 /* userPostTableViewCell.xib */; };
-		D54E85D5245003C700310EC8 /* 丸底フラスコのフリーアイコン3.png in Resources */ = {isa = PBXBuildFile; fileRef = D54E85D4245003C700310EC8 /* 丸底フラスコのフリーアイコン3.png */; };
 		D54E85D7245009C800310EC8 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54E85D6245009C800310EC8 /* CommentsViewController.swift */; };
 		D54E85DA24500A1C00310EC8 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54E85D824500A1C00310EC8 /* CommentTableViewCell.swift */; };
 		D54E85DB24500A1C00310EC8 /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D54E85D924500A1C00310EC8 /* CommentTableViewCell.xib */; };
 		D54E85DD24500BD900310EC8 /* ShowOtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54E85DC24500BD800310EC8 /* ShowOtherViewController.swift */; };
 		D54E85DF245142BB00310EC8 /* MyImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54E85DE245142BA00310EC8 /* MyImageDetailViewController.swift */; };
 		D54E85E12451430500310EC8 /* MyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54E85E02451430400310EC8 /* MyDetailViewController.swift */; };
+		D555B86B248A7F3B00F7DAE6 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D555B86A248A7F3B00F7DAE6 /* back.png */; };
 		D589DD9C2447026A0064760C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589DD9B2447026A0064760C /* AppDelegate.swift */; };
 		D589DD9E2447026A0064760C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589DD9D2447026A0064760C /* SceneDelegate.swift */; };
 		D589DDA02447026A0064760C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D589DD9F2447026A0064760C /* ViewController.swift */; };
@@ -91,21 +90,26 @@
 		D5B468DE245452520035E6CF /* MyNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B468DD245452520035E6CF /* MyNavigationViewController.swift */; };
 		D5B468E024566CD60035E6CF /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B468DF24566CD60035E6CF /* SearchDetailViewController.swift */; };
 		D5B468E224566D5E0035E6CF /* SearchImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B468E124566D5E0035E6CF /* SearchImageDetailViewController.swift */; };
-		D5D8586E2452BCFB00A2BB5A /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D5D8586D2452BCFB00A2BB5A /* back.png */; };
+		D5C22406247A8F2C00A122A5 /* 丸底フラスコのフリーアイコン3.png in Resources */ = {isa = PBXBuildFile; fileRef = D5C22405247A8F2C00A122A5 /* 丸底フラスコのフリーアイコン3.png */; };
+		D5C22408247A8F3400A122A5 /* twitter背景画像(暗い).jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5C22407247A8F3400A122A5 /* twitter背景画像(暗い).jpg */; };
+		D5C2240A247A8F4300A122A5 /* メモアイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = D5C22409247A8F4300A122A5 /* メモアイコン.png */; };
+		D5C22411247A900900A122A5 /* icons8-メモ-64.png in Resources */ = {isa = PBXBuildFile; fileRef = D5C2240B247A900800A122A5 /* icons8-メモ-64.png */; };
+		D5C22412247A900900A122A5 /* icons8-メモ-26.png in Resources */ = {isa = PBXBuildFile; fileRef = D5C2240C247A900900A122A5 /* icons8-メモ-26.png */; };
+		D5C22413247A900900A122A5 /* 丸底フラスコのフリーアイコン3.png in Resources */ = {isa = PBXBuildFile; fileRef = D5C2240D247A900900A122A5 /* 丸底フラスコのフリーアイコン3.png */; };
+		D5C22415247A900900A122A5 /* メモアイコン.png in Resources */ = {isa = PBXBuildFile; fileRef = D5C2240F247A900900A122A5 /* メモアイコン.png */; };
+		D5C22416247A900900A122A5 /* twitter背景画像(暗い).jpg in Resources */ = {isa = PBXBuildFile; fileRef = D5C22410247A900900A122A5 /* twitter背景画像(暗い).jpg */; };
 		D5D858702452C3FC00A2BB5A /* UserImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8586F2452C3FB00A2BB5A /* UserImageDetailViewController.swift */; };
 		D5D858722452C42600A2BB5A /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D858712452C42600A2BB5A /* UserDetailViewController.swift */; };
 		D5D858742452EFAC00A2BB5A /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = D5D858732452EFAB00A2BB5A /* person.png */; };
 		D5D8587624530E0100A2BB5A /* fullheart.png in Resources */ = {isa = PBXBuildFile; fileRef = D5D8587524530E0000A2BB5A /* fullheart.png */; };
 		D5D85878245318C700A2BB5A /* icons8-ハート-48.png in Resources */ = {isa = PBXBuildFile; fileRef = D5D85877245318C700A2BB5A /* icons8-ハート-48.png */; };
+		D5FEED7724764ECA00C15629 /* SubImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FEED7624764ECA00C15629 /* SubImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		124E8B4126F00E629C6562DC /* Pods-labox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-labox.release.xcconfig"; path = "Target Support Files/Pods-labox/Pods-labox.release.xcconfig"; sourceTree = "<group>"; };
 		37219CA21349BE7308ABE572 /* Pods-labox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-labox.debug.xcconfig"; path = "Target Support Files/Pods-labox/Pods-labox.debug.xcconfig"; sourceTree = "<group>"; };
 		64DE38682E88C04E32BE0F0F /* Pods_labox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_labox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5093C2E245AF48400C97034 /* メモアイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "メモアイコン.png"; sourceTree = SOURCE_ROOT; };
-		D5093C30245AF74400C97034 /* icons8-メモ-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-メモ-64.png"; sourceTree = SOURCE_ROOT; };
-		D5093C31245AF74400C97034 /* icons8-メモ-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-メモ-26.png"; sourceTree = SOURCE_ROOT; };
 		D5150F0E244E047800FFC5E0 /* UserPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPageViewController.swift; sourceTree = "<group>"; };
 		D5150F11244E059E00FFC5E0 /* MypostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypostTableViewCell.swift; sourceTree = "<group>"; };
 		D5150F12244E059E00FFC5E0 /* MypostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MypostTableViewCell.xib; sourceTree = "<group>"; };
@@ -167,17 +171,20 @@
 		D529D1D62448860C00531945 /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@3x.png"; sourceTree = "<group>"; };
 		D52D88EC2457DFD10008A400 /* ForgetPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPWViewController.swift; sourceTree = "<group>"; };
 		D53237B624516B9900617F33 /* EditMyPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyPostViewController.swift; sourceTree = "<group>"; };
-		D54E85CE244F15B100310EC8 /* twitter背景画像(暗い).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "twitter背景画像(暗い).jpg"; sourceTree = SOURCE_ROOT; };
+		D53B8B42248F805D001D2886 /* icons8-back-arrow-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-back-arrow-50.png"; path = "images/icons8-back-arrow-50.png"; sourceTree = SOURCE_ROOT; };
+		D53E38C82492703A0093BD3B /* DoneSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneSignUpViewController.swift; sourceTree = "<group>"; };
+		D53E38CA249270520093BD3B /* FirstSignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSignInViewController.swift; sourceTree = "<group>"; };
 		D54E85D0244F3EC500310EC8 /* userPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userPostTableViewCell.swift; sourceTree = "<group>"; };
 		D54E85D1244F3EC500310EC8 /* userPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = userPostTableViewCell.xib; sourceTree = "<group>"; };
-		D54E85D4245003C700310EC8 /* 丸底フラスコのフリーアイコン3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "丸底フラスコのフリーアイコン3.png"; sourceTree = SOURCE_ROOT; };
 		D54E85D6245009C800310EC8 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		D54E85D824500A1C00310EC8 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		D54E85D924500A1C00310EC8 /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		D54E85DC24500BD800310EC8 /* ShowOtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOtherViewController.swift; sourceTree = "<group>"; };
 		D54E85DE245142BA00310EC8 /* MyImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImageDetailViewController.swift; sourceTree = "<group>"; };
 		D54E85E02451430400310EC8 /* MyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailViewController.swift; sourceTree = "<group>"; };
-		D589DD982447026A0064760C /* labox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = labox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D555B86A248A7F3B00F7DAE6 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = images/back.png; sourceTree = SOURCE_ROOT; };
+		D555B86C248A801400F7DAE6 /* FLAnimatedImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FLAnimatedImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D589DD982447026A0064760C /* LABOX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LABOX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D589DD9B2447026A0064760C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D589DD9D2447026A0064760C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D589DD9F2447026A0064760C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -188,12 +195,20 @@
 		D5B468DD245452520035E6CF /* MyNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationViewController.swift; sourceTree = "<group>"; };
 		D5B468DF24566CD60035E6CF /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		D5B468E124566D5E0035E6CF /* SearchImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageDetailViewController.swift; sourceTree = "<group>"; };
-		D5D8586D2452BCFB00A2BB5A /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		D5C22405247A8F2C00A122A5 /* 丸底フラスコのフリーアイコン3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "丸底フラスコのフリーアイコン3.png"; path = "images/丸底フラスコのフリーアイコン3.png"; sourceTree = SOURCE_ROOT; };
+		D5C22407247A8F3400A122A5 /* twitter背景画像(暗い).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "twitter背景画像(暗い).jpg"; path = "images/twitter背景画像(暗い).jpg"; sourceTree = SOURCE_ROOT; };
+		D5C22409247A8F4300A122A5 /* メモアイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "メモアイコン.png"; path = "images/メモアイコン.png"; sourceTree = SOURCE_ROOT; };
+		D5C2240B247A900800A122A5 /* icons8-メモ-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-メモ-64.png"; path = "images/icons8-メモ-64.png"; sourceTree = SOURCE_ROOT; };
+		D5C2240C247A900900A122A5 /* icons8-メモ-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-メモ-26.png"; path = "images/icons8-メモ-26.png"; sourceTree = SOURCE_ROOT; };
+		D5C2240D247A900900A122A5 /* 丸底フラスコのフリーアイコン3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "丸底フラスコのフリーアイコン3.png"; path = "images/丸底フラスコのフリーアイコン3.png"; sourceTree = SOURCE_ROOT; };
+		D5C2240F247A900900A122A5 /* メモアイコン.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "メモアイコン.png"; path = "images/メモアイコン.png"; sourceTree = SOURCE_ROOT; };
+		D5C22410247A900900A122A5 /* twitter背景画像(暗い).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "twitter背景画像(暗い).jpg"; path = "images/twitter背景画像(暗い).jpg"; sourceTree = SOURCE_ROOT; };
 		D5D8586F2452C3FB00A2BB5A /* UserImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageDetailViewController.swift; sourceTree = "<group>"; };
 		D5D858712452C42600A2BB5A /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		D5D858732452EFAB00A2BB5A /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person.png; sourceTree = "<group>"; };
 		D5D8587524530E0000A2BB5A /* fullheart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fullheart.png; sourceTree = "<group>"; };
 		D5D85877245318C700A2BB5A /* icons8-ハート-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-ハート-48.png"; sourceTree = "<group>"; };
+		D5FEED7624764ECA00C15629 /* SubImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +235,7 @@
 		7AEED5221B2A9CABABF4D6E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D555B86C248A801400F7DAE6 /* FLAnimatedImage.framework */,
 				64DE38682E88C04E32BE0F0F /* Pods_labox.framework */,
 			);
 			name = Frameworks;
@@ -279,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				D589DD9F2447026A0064760C /* ViewController.swift */,
+				D5FEED7624764ECA00C15629 /* SubImageViewController.swift */,
 				D51DF0B72449DBA6009DE9A9 /* PostViewController.swift */,
 				D51DF0D9244A0BCF009DE9A9 /* DetailViewController.swift */,
 				D51DF0DB244A0C09009DE9A9 /* ImageDetailViewController.swift */,
@@ -311,6 +328,8 @@
 				D529D1AF2447075F00531945 /* KiyakuViewController.swift */,
 				D529D1B12447077800531945 /* PrivacyViewController.swift */,
 				D52D88EC2457DFD10008A400 /* ForgetPWViewController.swift */,
+				D53E38C82492703A0093BD3B /* DoneSignUpViewController.swift */,
+				D53E38CA249270520093BD3B /* FirstSignInViewController.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -318,18 +337,22 @@
 		D529D1B92448478400531945 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				D5093C2E245AF48400C97034 /* メモアイコン.png */,
-				D5093C31245AF74400C97034 /* icons8-メモ-26.png */,
-				D5093C30245AF74400C97034 /* icons8-メモ-64.png */,
+				D5C22410247A900900A122A5 /* twitter背景画像(暗い).jpg */,
+				D5C22409247A8F4300A122A5 /* メモアイコン.png */,
+				D5C22407247A8F3400A122A5 /* twitter背景画像(暗い).jpg */,
+				D5C2240F247A900900A122A5 /* メモアイコン.png */,
+				D5C22405247A8F2C00A122A5 /* 丸底フラスコのフリーアイコン3.png */,
+				D5C2240C247A900900A122A5 /* icons8-メモ-26.png */,
+				D53B8B42248F805D001D2886 /* icons8-back-arrow-50.png */,
+				D5C2240B247A900800A122A5 /* icons8-メモ-64.png */,
+				D5C2240D247A900900A122A5 /* 丸底フラスコのフリーアイコン3.png */,
 				D5D85877245318C700A2BB5A /* icons8-ハート-48.png */,
-				D54E85D4245003C700310EC8 /* 丸底フラスコのフリーアイコン3.png */,
 				D5150F19244E157100FFC5E0 /* IMG_78258A221AB4-1.jpeg */,
 				D5150F17244E154A00FFC5E0 /* fujiyacake.jpg */,
 				D51DF0E8244AF51A009DE9A9 /* icons8-いいね-24 (1).png */,
 				D51DF0E6244AF50B009DE9A9 /* icons8-heart-outline-60@2x.png */,
 				D5D8587524530E0000A2BB5A /* fullheart.png */,
-				D54E85CE244F15B100310EC8 /* twitter背景画像(暗い).jpg */,
-				D5D8586D2452BCFB00A2BB5A /* back.png */,
+				D555B86A248A7F3B00F7DAE6 /* back.png */,
 				D5D858732452EFAB00A2BB5A /* person.png */,
 				D529D1C12448860C00531945 /* ios */,
 				D529D1BB2448479500531945 /* labox_firstimage.jpg */,
@@ -398,7 +421,7 @@
 		D589DD992447026A0064760C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D589DD982447026A0064760C /* labox.app */,
+				D589DD982447026A0064760C /* LABOX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -439,8 +462,7 @@
 				D589DD942447026A0064760C /* Sources */,
 				D589DD952447026A0064760C /* Frameworks */,
 				D589DD962447026A0064760C /* Resources */,
-				D34DC41400817B450817EEA4 /* [CP] Embed Pods Frameworks */,
-				408E379F22576FDC994AF773 /* [CP] Copy Pods Resources */,
+				F3F8899914162D4B61E42A06 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -448,7 +470,7 @@
 			);
 			name = labox;
 			productName = labox;
-			productReference = D589DD982447026A0064760C /* labox.app */;
+			productReference = D589DD982447026A0064760C /* LABOX.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -489,7 +511,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5093C2F245AF48500C97034 /* メモアイコン.png in Resources */,
+				D5C22413247A900900A122A5 /* 丸底フラスコのフリーアイコン3.png in Resources */,
+				D5C22406247A8F2C00A122A5 /* 丸底フラスコのフリーアイコン3.png in Resources */,
 				D529D1AA2447058000531945 /* SignIn.storyboard in Resources */,
 				D5150F18244E154B00FFC5E0 /* fujiyacake.jpg in Resources */,
 				D51DF0E2244A1373009DE9A9 /* SearchTableViewCell.xib in Resources */,
@@ -498,6 +521,7 @@
 				D51DF0E7244AF50B009DE9A9 /* icons8-heart-outline-60@2x.png in Resources */,
 				D51DF0D4244A02C5009DE9A9 /* Timeline_3_TableViewCell.xib in Resources */,
 				D5D8587624530E0100A2BB5A /* fullheart.png in Resources */,
+				D5C22416247A900900A122A5 /* twitter背景画像(暗い).jpg in Resources */,
 				D51DF0D0244A02A8009DE9A9 /* Timeline_2_TableViewCell.xib in Resources */,
 				D529D1E42448860D00531945 /* Icon-App-60x60@2x.png in Resources */,
 				D529D1DF2448860D00531945 /* Contents.json in Resources */,
@@ -507,35 +531,37 @@
 				D529D1DA2448860D00531945 /* Icon-App-40x40@1x.png in Resources */,
 				D529D1D92448860D00531945 /* Icon-App-29x29@1x.png in Resources */,
 				D529D1DC2448860D00531945 /* Icon-App-83.5x83.5@2x.png in Resources */,
-				D54E85CF244F15B100310EC8 /* twitter背景画像(暗い).jpg in Resources */,
-				D5093C32245AF74500C97034 /* icons8-メモ-64.png in Resources */,
 				D529D1DD2448860D00531945 /* Icon-App-20x20@3x.png in Resources */,
+				D5C22411247A900900A122A5 /* icons8-メモ-64.png in Resources */,
 				D529D1E82448860D00531945 /* README.md in Resources */,
 				D529D1E32448860D00531945 /* Icon-App-60x60@3x.png in Resources */,
+				D5C2240A247A8F4300A122A5 /* メモアイコン.png in Resources */,
+				D5C22415247A900900A122A5 /* メモアイコン.png in Resources */,
 				D54E85DB24500A1C00310EC8 /* CommentTableViewCell.xib in Resources */,
 				D589DDA32447026A0064760C /* Main.storyboard in Resources */,
 				D529D1E02448860D00531945 /* Icon-App-20x20@2x.png in Resources */,
 				D5150F14244E059E00FFC5E0 /* MypostTableViewCell.xib in Resources */,
 				D529D1BF2448479500531945 /* labox_logo_bigger.jpg in Resources */,
 				D529D1BD2448479500531945 /* labox_logo.jpg in Resources */,
+				D555B86B248A7F3B00F7DAE6 /* back.png in Resources */,
 				D5150F1A244E157100FFC5E0 /* IMG_78258A221AB4-1.jpeg in Resources */,
 				D529D1E52448860D00531945 /* Icon-App-76x76@1x.png in Resources */,
 				D529D1E62448860D00531945 /* Icon-App-40x40@3x.png in Resources */,
 				D529D1E22448860D00531945 /* Icon-App-40x40@2x.png in Resources */,
 				D529D1E72448860D00531945 /* Icon-App-29x29@2x.png in Resources */,
 				D529D1EA2448860D00531945 /* iTunesArtwork@3x.png in Resources */,
-				D5D8586E2452BCFB00A2BB5A /* back.png in Resources */,
 				D5D85878245318C700A2BB5A /* icons8-ハート-48.png in Resources */,
 				D5D858742452EFAC00A2BB5A /* person.png in Resources */,
 				D54E85D3244F3EC500310EC8 /* userPostTableViewCell.xib in Resources */,
 				D529D1BE2448479500531945 /* labox_firstimage.jpg in Resources */,
+				D53B8B43248F805E001D2886 /* icons8-back-arrow-50.png in Resources */,
 				D51DF0C6244A0223009DE9A9 /* TimelineTableViewCell.xib in Resources */,
 				D51DF0D8244A0453009DE9A9 /* Timeline_1_TableViewCell.xib in Resources */,
 				D529D1E92448860D00531945 /* iTunesArtwork@2x.png in Resources */,
 				D529D1DE2448860D00531945 /* ItunesArtwork@2x.png in Resources */,
-				D5093C33245AF74500C97034 /* icons8-メモ-26.png in Resources */,
-				D54E85D5245003C700310EC8 /* 丸底フラスコのフリーアイコン3.png in Resources */,
+				D5C22412247A900900A122A5 /* icons8-メモ-26.png in Resources */,
 				D529D1E12448860D00531945 /* Icon-App-29x29@3x.png in Resources */,
+				D5C22408247A8F3400A122A5 /* twitter背景画像(暗い).jpg in Resources */,
 				D51DF0E9244AF51A009DE9A9 /* icons8-いいね-24 (1).png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,40 +569,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		408E379F22576FDC994AF773 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-labox/Pods-labox-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-labox/Pods-labox-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-labox/Pods-labox-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D34DC41400817B450817EEA4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-labox/Pods-labox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-labox/Pods-labox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-labox/Pods-labox-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D44F840A81F8DB0CFC8D54AA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -599,6 +591,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F3F8899914162D4B61E42A06 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-labox/Pods-labox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-labox/Pods-labox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-labox/Pods-labox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -608,6 +617,7 @@
 			files = (
 				D5150F1C244E18EB00FFC5E0 /* MyPostViewController.swift in Sources */,
 				D51DF0C5244A0223009DE9A9 /* TimelineTableViewCell.swift in Sources */,
+				D53E38C92492703A0093BD3B /* DoneSignUpViewController.swift in Sources */,
 				D51DF0D7244A0453009DE9A9 /* Timeline_1_TableViewCell.swift in Sources */,
 				D5150F0F244E047800FFC5E0 /* UserPageViewController.swift in Sources */,
 				D51DF0CF244A02A8009DE9A9 /* Timeline_2_TableViewCell.swift in Sources */,
@@ -619,12 +629,14 @@
 				D5150F16244E139000FFC5E0 /* EditUserViewController.swift in Sources */,
 				D5D858702452C3FC00A2BB5A /* UserImageDetailViewController.swift in Sources */,
 				D529D1AC2447068F00531945 /* SignInViewController.swift in Sources */,
+				D5FEED7724764ECA00C15629 /* SubImageViewController.swift in Sources */,
 				D589DDA02447026A0064760C /* ViewController.swift in Sources */,
 				D51DF0BB2449DC71009DE9A9 /* Post.swift in Sources */,
 				D51DF0DA244A0BCF009DE9A9 /* DetailViewController.swift in Sources */,
 				D51DF0E1244A1373009DE9A9 /* SearchTableViewCell.swift in Sources */,
 				D54E85E12451430500310EC8 /* MyDetailViewController.swift in Sources */,
 				D529D1B62447084700531945 /* SecondPageSignUpViewController.swift in Sources */,
+				D53E38CB249270520093BD3B /* FirstSignInViewController.swift in Sources */,
 				D51DF0B62449A964009DE9A9 /* TopViewController.swift in Sources */,
 				D51DF0BF2449DC94009DE9A9 /* User.swift in Sources */,
 				D529D1B02447075F00531945 /* KiyakuViewController.swift in Sources */,
@@ -660,6 +672,7 @@
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		D589DDA62447026E0064760C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -792,6 +805,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = U24VR669WQ;
 				INFOPLIST_FILE = labox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -799,9 +813,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yilin.com.labox;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LABOX;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -811,6 +825,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = U24VR669WQ;
 				INFOPLIST_FILE = labox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -818,9 +833,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Yilin.com.labox;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = LABOX;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

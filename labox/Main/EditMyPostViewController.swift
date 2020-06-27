@@ -107,10 +107,10 @@ class EditMyPostViewController: UIViewController, UICollectionViewDelegate,UICol
             dateTextField.inputView = datePicker
             dateTextField.inputAccessoryView = toolbar
         
-        
+        shareSwitch.onTintColor = UIColor(red: 234/255, green: 136/255, blue: 89/255, alpha: 1.0)
         
         //postImageView.image = placeholderImage
-        postTextView.becomeFirstResponder()  //謎
+        //postTextView.becomeFirstResponder()  
         
         postTextView.delegate = self
         
@@ -137,8 +137,10 @@ class EditMyPostViewController: UIViewController, UICollectionViewDelegate,UICol
         postTextView.layer.cornerRadius = postTextView.bounds.width / 30.0
         postTextView.layer.masksToBounds = true
         
-        addImageButton.layer.cornerRadius = addImageButton.bounds.width / 30.0
+        addImageButton.layer.borderColor = UIColor(red: 234/255, green: 136/255, blue: 89/255, alpha: 1.0).cgColor
+        addImageButton.layer.borderWidth = 2
         addImageButton.layer.masksToBounds = true
+        addImageButton.layer.cornerRadius = addImageButton.bounds.width / 30.0
         
         if userDate == "" {
             dateTextField.placeholder = "2020/04/18"

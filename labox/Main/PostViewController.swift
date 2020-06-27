@@ -112,6 +112,7 @@ class PostViewController: UIViewController, UICollectionViewDelegate,UICollectio
         //postImageView.image = placeholderImage
         postTextView.becomeFirstResponder()  //謎
         
+        shareSwitch.onTintColor = UIColor(red: 234/255, green: 136/255, blue: 89/255, alpha: 1.0)
         
         if userText == "" {
             postTextView.placeholder = "メモ"
@@ -167,8 +168,11 @@ class PostViewController: UIViewController, UICollectionViewDelegate,UICollectio
         postTextView.layer.cornerRadius = postTextView.bounds.width / 30.0
         postTextView.layer.masksToBounds = true
         
-        addImageButton.layer.cornerRadius = addImageButton.bounds.width / 30.0
+        addImageButton.layer.borderColor = UIColor(red: 234/255, green: 136/255, blue: 89/255, alpha: 1.0).cgColor
+        addImageButton.layer.borderWidth = 2
         addImageButton.layer.masksToBounds = true
+        
+        addImageButton.layer.cornerRadius = addImageButton.bounds.width / 30.0
         
     }
     
@@ -445,14 +449,6 @@ class PostViewController: UIViewController, UICollectionViewDelegate,UICollectio
                 HUD.hide()
                 HUD.flash(.labeledSuccess(title: "投稿完了", subtitle: "送信しました"), delay: 2)
                 self.dismiss(animated: true, completion: nil)
-//                let alert = UIAlertController(title: "投稿完了", message: "送信しました", preferredStyle:.alert)
-//                let action = UIAlertAction(title: "OK", style: .default) { (action) in
-//                    //OKボタンを押した時のアクション
-//                    alert.dismiss(animated: true, completion: nil)
-//                    self.dismiss(animated: true, completion: nil)
-//                }
-//                alert.addAction(action)
-//                self.present(alert, animated: true, completion: nil)
             }
         }
         func confirmContent() {

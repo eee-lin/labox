@@ -12,14 +12,15 @@ class User: NSObject {
 
     var objectId: String
     var userName: String
-    var displayName: String? //?はもしかしたら最初からnilの可能性
+    var displayName: String //?はもしかしたら最初からnilの可能性
     var introduction: String?
     var labname: String?
     var major: String?
 
     //初期値
-    init(objectId: String, userName: String) {
+    init(objectId: String, userName: String, displayName: String) {
         self.objectId = objectId
         self.userName = userName
+        self.displayName = displayName
     }
 }

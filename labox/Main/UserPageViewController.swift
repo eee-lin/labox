@@ -60,7 +60,7 @@ class UserPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         //2行目で取得したファイルをtimelineTableViewに登録
         postTableView.register(nib, forCellReuseIdentifier: "Cell")
         
-        nameLabel.text = NCMBUser.current().object(forKey: "userName") as? String
+        nameLabel.text = NCMBUser.current().object(forKey: "displayName") as? String
         
         // 引っ張って更新
         setRefreshControl()
@@ -77,9 +77,9 @@ class UserPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     func loadImage() {
         //ユーザー情報の取得
                 if let user = NCMBUser.current() {
-                    nameLabel.text = user.userName
+                    nameLabel.text = user.object(forKey: "displayName") as? String
                     introduceTextView.text = user.object(forKey: "introduction") as? String
-                    self.navigationItem.title = user.userName
+                    self.navigationItem.title = user.object(forKey: "displayName") as? String
         //            let userId = NCMBUser.current().userName
                     //画像を取得
                     let userfile = NCMBFile.file(withName: user.objectId + "user", data: nil) as! NCMBFile
@@ -331,8 +331,8 @@ class UserPageViewController: UIViewController,UITableViewDelegate, UITableViewD
                 for postObject in result as! [NCMBObject] {
                     // ユーザー情報をUserクラスにセット
                     let user = postObject.object(forKey: "user") as! NCMBUser
-                    let userModel = User(objectId: user.objectId, userName: user.userName)
-                    userModel.displayName = user.object(forKey: "displayName") as? String
+                    let userModel = User(objectId: user.objectId, userName: user.userName, displayName: user.object(forKey: "displayName") as! String)
+                    //userModel.displayName = user.object(forKey: "displayName") as? String
 
                     // 投稿の情報を取得
                     let imageUrl1 = postObject.object(forKey: "imageUrl1") as! String

@@ -66,10 +66,10 @@ class ShowOtherViewController: UIViewController, UITableViewDataSource, UITableV
             
             // TODO: CurrentUserがいないときにはサインイン画面に移動させる（他のVCのコードみてbyせのお）
             // ユーザー基礎情報の読み込み
-            userNameLabel.text = selectedPost?.user.userName
+            userNameLabel.text = selectedPost?.user.displayName
             userIntroductionTextView.text = selectedPost?.user.introduction
             labnameLabel.text = selectedPost?.user.labname
-            self.navigationItem.title = selectedPost?.user.userName
+            self.navigationItem.title = selectedPost?.user.displayName
             
             // プロフィール画像の読み込み
             let user = selectedPost?.user
@@ -231,7 +231,7 @@ class ShowOtherViewController: UIViewController, UITableViewDataSource, UITableV
                     for postObject in result as! [NCMBObject] {
                         // ユーザー情報をUserクラスにセット
                         let user = postObject.object(forKey: "user") as! NCMBUser
-                        let userModel = User(objectId: user.objectId, userName: user.userName)
+                        let userModel = User(objectId: user.objectId, userName: user.userName, displayName: user.object(forKey: "displayName") as! String)
                         //userModel.displayName = user.object(forKey: "displayName") as? String
                         
                         // 投稿の情報を取得

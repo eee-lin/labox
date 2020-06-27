@@ -149,12 +149,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         file.getDataInBackground { (data, error) in
             if error != nil {
                 HUD.flash(.labeledError(title: "画像取得エラー", subtitle: "通信状況を確認してください"), delay: 1)
-//                let alert = UIAlertController(title: "画像取得エラー", message: error!.localizedDescription, preferredStyle: .alert)
-//                let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-//
-//                })
-//                alert.addAction(okAction)
-//                self.present(alert, animated: true, completion: nil)
             } else {
                 if data != nil {
                     //dataの中身があれば画像を表示
@@ -172,7 +166,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         cell.userImageView.layer.cornerRadius = cell.userImageView.bounds.width / 2.0
         cell.userImageView.layer.masksToBounds = true
         
-        cell.userNameLabel.text = users[indexPath.row].object(forKey: "userName") as? String
+        cell.userNameLabel.text = users[indexPath.row].object(forKey: "displayName") as? String
         
         // Followボタンを機能させる
         cell.tag = indexPath.row
@@ -217,9 +211,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
     
     
     func didTapFollowButton(tableViewCell: UITableViewCell, button: UIButton) {
-        let userName = users[tableViewCell.tag].object(forKey: "userName") as? String
+        
+        //let userName = users[tableViewCell.tag].object(forKey: "userName") as? String
+        let displayName = users[tableViewCell.tag].object(forKey: "displayName") as? String
+        let message = displayName! + "をフォローしますか？"
 
-        let message = userName! + "をフォローしますか？"
         let alert = UIAlertController(title: "フォロー", message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             self.follow(selectedUser: self.users[tableViewCell.tag])
@@ -268,8 +264,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         
         // 検索ワードがある場合
         if let text = searchText {
-            print(text)
-            query?.whereKey("userName", equalTo: text)
+            query?.whereKey("displayName", equalTo: text)
         }
         
         // 新着ユーザー50人だけ拾う
@@ -283,6 +278,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
                 // 取得した新着50件のユーザーを格納
                 self.users = result as! [NCMBUser]
                 print(self.users.count)
+                print("どすこい")
                 self.loadFollowingUserIds()
                 //self.searchTableView.reloadData()
             }
@@ -326,12 +322,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
             ud.synchronize()
             return
         }
-        
-//        let userquery = NCMBUser.query()
-//
-//        if userquery != nil{
-//        return
-//        }
+
         
             let query = NCMBQuery(className: "Post")
                 // 降順
@@ -351,7 +342,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
                             //退会済みユーザーの投稿を避けるため、activeがfalse以外のモノだけを表示
                             if user.object(forKey: "active") as? Bool != false {
                                     // 投稿したユーザーの情報をUserモデルにまとめる
-                                let userModel = User(objectId: user.objectId, userName: user.userName)
+                                let userModel = User(objectId: user.objectId, userName: user.userName, displayName: user.object(forKey: "displayName") as! String)
                                     //userModel.displayName = user.object(forKey: "displayName") as? String
 
                                     // 投稿の情報を取得
@@ -386,6 +377,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
                                 print("iiiiiiiiiiiiii")
                                 print(self.post as Any)
                             }
+                        print("aaaaaaaaaaaaaaa")
                         }
                         //self.posts = result as! [NCMBObject] //any型から他の型に変える
                     self.searchTableView.reloadData()

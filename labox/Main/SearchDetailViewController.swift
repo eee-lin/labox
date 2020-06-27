@@ -49,7 +49,7 @@ class SearchDetailViewController: UIViewController {
         
         userImageView.layer.cornerRadius = userImageView.bounds.width / 2.0
 
-        nameLabel.text = selectedPost?.user.userName
+        nameLabel.text = selectedPost?.user.displayName
         textTextView.text = selectedPost?.text
         let date = stringFromDate(date: selectedPost!.createDate, format: "yyyy年MM月dd日 HH時mm分ss秒 ")
         dateLabel.text = date

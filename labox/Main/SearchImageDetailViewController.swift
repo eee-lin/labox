@@ -17,6 +17,7 @@ class SearchImageDetailViewController: UIViewController, UICollectionViewDelegat
     var selectedUser: NCMBUser?
     var count: Int = 0
     var items = [String]()
+    var selectedImage: String!
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var recorddateLabel: UILabel!
@@ -64,7 +65,7 @@ class SearchImageDetailViewController: UIViewController, UICollectionViewDelegat
         textTextView.layer.cornerRadius = textTextView.bounds.width / 30.0
         textTextView.layer.masksToBounds = true
         
-        nameLabel.text = selectedPost?.user.userName
+        nameLabel.text = selectedPost?.user.displayName
         recorddateLabel.text = selectedPost?.recorddate
         titleLabel.text = selectedPost?.title
         textTextView.text = selectedPost?.text
@@ -118,12 +119,25 @@ class SearchImageDetailViewController: UIViewController, UICollectionViewDelegat
             return items.count
         }
     
+       // Cell が選択された場合
+       func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+        // [indexPath.row] から画像名を探し、UImage を設定
+        selectedImage = items[indexPath.row]
+        
+        // SubViewController へ遷移するために Segue を呼び出す
+        performSegue(withIdentifier: "toSubImage",sender: nil)
+       }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toComments"  {
             let commentsViewController = segue.destination as! CommentsViewController
             //prepare for segueが呼ばれた時の今選択されているセルを代入する
             commentsViewController.postId = selectedPost?.objectId
+        }
+        if segue.identifier == "toSubImage" {
+            let subimageViewController = segue.destination as! SubImageViewController
+            subimageViewController.selectedImg = selectedImage
         }
     }
     
